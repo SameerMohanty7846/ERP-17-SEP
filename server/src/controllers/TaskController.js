@@ -1,11 +1,6 @@
 import { models } from '../models/index.js';
 const { Task, Employee } = models;
 import { Op } from 'sequelize';
-
-
-
-
-
 export const getTasks = async (req, res) => {
   const { is_master, userId } = req.user;
   const { search, page = 1, pageSize = 10, sortBy = 'createdAt', sortOrder = 'DESC' } = req.query;
